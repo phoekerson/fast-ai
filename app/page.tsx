@@ -20,7 +20,7 @@ import { useAuth } from "@clerk/nextjs";
 import React from 'react';
 
 export default function Home() {
-  const { userId } = auth();
+const { userId } = (await auth()) as { userId: string };
 
   return (
     <ClerkProvider>
