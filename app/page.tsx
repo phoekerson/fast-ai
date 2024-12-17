@@ -19,9 +19,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { useAuth } from "@clerk/nextjs";
 import React from 'react';
 
-export default function Home() {
-const { userId } = (await auth()) as { userId: string };
-
+export default async function Home() {
+ const { userId } = await auth();
   return (
     <ClerkProvider>
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-gray-100 overflow-hidden pt-20">
